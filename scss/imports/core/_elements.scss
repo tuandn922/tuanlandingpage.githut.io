@@ -1,0 +1,132 @@
+a {
+    color: $text-cl;
+    text-decoration: none;
+    display: block;
+}
+img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+
+
+.btn__main{
+    @include text(14px, fmain, normal, #fff, uppercase);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff; 
+    text-decoration: none;
+    padding: 10px 40px;
+    @include transition(0.4s); 
+    i {
+        display: block;
+        margin-left: 15px;
+        img {
+            position: relative;
+            right: 0;
+            display: block;
+            transition: all 0.4s;    
+        }
+        
+    }  
+    &:hover {      
+        img {
+                right:-8px;
+        }
+   } 
+    
+}
+
+.arrow{
+    
+}
+// .video__list-item--img {
+//     width: 280px;
+//     height: 280px;
+//     border: 1px solid #000;
+//     border-radius: 50%;
+// }
+
+// @keyframe leaves {
+//     0% {
+//         transform: scale(1.0);
+//         -webkit-transform: scale(1.0);
+//     }
+//     100% {
+//         transform: scale(2.0);
+//         -webkit-transform: scale(2.0);
+//     }
+// }
+.video__model {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    @include midflex();
+    background: rgba(0, 0 , 0, 0.5);
+    display: none;
+    .wrap {
+        position: relative;
+        iframe {
+            width: 700px;
+            height: 460px;
+        }
+        .close {
+            position: absolute;
+            font-size: 45px;
+            background: #fff;
+            color: #000;
+            top: -20px;
+            right: -16px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            @include midflex();
+            border-radius: 100%;
+        }
+    }
+}
+.loader-container {
+    position: fixed;
+    background: #000;
+    @include midflex();
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    .loader {
+        width: 50px;
+        height: 50px;
+        border: 5px solid;
+        color: #3498db;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: loader 1.2s linear infinite;
+    }
+}
+//loader
+@keyframes loader {
+    25% {
+        color: #2ecc71;
+    }
+    50% {
+        color: #f1c40f;
+    }
+    75% {
+        color: #e74c3c;
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+//scroll
+.custom {
+    opacity: 0;
+    @include transition(6s);
+}
+.scroll-class {
+    opacity: 1;
+}
